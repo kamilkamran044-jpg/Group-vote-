@@ -1,0 +1,13 @@
+{
+  "name": "groupvote",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Group decision planner on Netlify: share a link, everyone votes, best option wins.",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
