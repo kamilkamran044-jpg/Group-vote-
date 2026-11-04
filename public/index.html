@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GroupVote – decide together, fast</title>
+<meta name="description" content="Stop the endless group chat. Share a link, everyone votes, the best option wins. Free, no sign-up.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/"><span class="logo">G</span><b>GroupVote</b></a>
+    <nav class="links" aria-label="Main">
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <!-- CREATE VIEW -->
+  <section id="create" class="hidden">
+    <h1>Decide together, fast.</h1>
+    <p class="sub">Where to eat? When to meet? Create a poll, share the link, and let the group vote. No sign-up needed.</p>
+    <form id="createForm" class="card" novalidate>
+      <div class="field">
+        <label for="title">What are you deciding?</label>
+        <input id="title" type="text" maxlength="120" placeholder="e.g. Friday dinner spot" required>
+      </div>
+      <div class="field">
+        <label for="desc">Details (optional)</label>
+        <textarea id="desc" rows="2" maxlength="300" placeholder="e.g. Budget up to $20 per person"></textarea>
+      </div>
+      <div class="field">
+        <label>Options</label>
+        <div id="opts"></div>
+        <button type="button" id="addOpt" class="ghost">+ Add option</button>
+      </div>
+      <button class="primary" id="createBtn" type="submit">Create poll</button>
+      <p class="err" id="createErr" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- POLL VIEW -->
+  <section id="poll" class="hidden">
+    <h1 id="pTitle"></h1>
+    <p class="sub" id="pDesc"></p>
+
+    <div class="card">
+      <label for="shareLink">Share this link with your group</label>
+      <div class="share">
+        <input id="shareLink" type="text" readonly>
+        <button id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+
+    <form id="voteForm" class="card" novalidate>
+      <div class="field">
+        <label for="vname">Your name</label>
+        <input id="vname" type="text" maxlength="40" placeholder="e.g. Ali" required>
+      </div>
+      <div id="questions"></div>
+      <button class="primary" id="voteBtn" type="submit">Submit my vote</button>
+      <p class="err" id="voteErr" role="alert"></p>
+    </form>
+
+    <div class="card">
+      <label>Results <span id="count" class="count"></span></label>
+      <div id="results"></div>
+      <div class="voters" id="voters"></div>
+    </div>
+  </section>
+
+  <noscript><p class="card">GroupVote needs JavaScript to work. Please enable it and reload.</p></noscript>
+
+  <footer>
+    <div class="fl"><a href="/how-it-works.html">How it works</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a></div>
+    Free • No account • Works on any phone
+  </footer>
+</div>
+<script src="/app.js" defer></script>
+</body>
+          </html>
